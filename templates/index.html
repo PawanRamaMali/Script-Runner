@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Script Selector</title>
+    <title>Script Runner</title>
 </head>
 <body>
-	<form action="/" method="post">
-	<select name="script">
-		{% for choice in choices %}
-		  <option value="{{ choice }}">{{ choice }}</option>
-		{% endfor %}
-	</select>
-	<input type="submit" value="Submit">
-	</form>
+    <h2>Choose a Script:</h2>
+    <form action="/" method="post">
+        <select name="script">
+            {% for script in scripts %}
+            <option value="{{script}}">{{script}}</option>
+            {% endfor %}
+        </select> <br />
+        <input type="submit" value="Run script">
+    </form>
+
+    {% if output %}
+    <h2>Output:</h2>
+    <pre>{{output}}</pre>
+    {% endif %}
 </body>
 </html>
