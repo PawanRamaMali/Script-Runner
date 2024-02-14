@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Script Selector</title>
+</head>
+<body>
+	<form action="/" method="post">
+	<select name="script">
+		{% for choice in choices %}
+		  <option value="{{ choice }}">{{ choice }}</option>
+		{% endfor %}
+	</select>
+	<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
